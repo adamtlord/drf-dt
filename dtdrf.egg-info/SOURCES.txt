@@ -3,17 +3,12 @@ MANIFEST.in
 README.md
 setup.py
 dtdrf/__init__.py
-dtdrf/admin.py
 dtdrf/apps.py
 dtdrf/filters.py
 dtdrf/mixins.py
-dtdrf/models.py
 dtdrf/pagination.py
-dtdrf/renderers.py
 dtdrf/tests.py
-dtdrf/viewsets.py
 dtdrf.egg-info/PKG-INFO
 dtdrf.egg-info/SOURCES.txt
 dtdrf.egg-info/dependency_links.txt
 dtdrf.egg-info/top_level.txt
-dtdrf/migrations/__init__.py
