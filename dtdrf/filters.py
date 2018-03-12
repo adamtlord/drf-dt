@@ -21,7 +21,6 @@ class DataTablesFilterBackend(filters.BaseFilterBackend):
 
         global_search = request.GET.get('search[value]')
 
-        # https://yuji.wordpress.com/2009/09/12/django-python-dynamically-create-queries-from-a-string-and-the-or-operator/
         filters = []
         columns_dict = view.dt_dict['columns']
         for col in list(columns_dict.values()):

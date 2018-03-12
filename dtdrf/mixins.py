@@ -47,7 +47,7 @@ class DataTablesListMixin(object):
 
         return columns_dict
 
-    def get_paginated_response(self, data):
+    def get_response(self, data):
         return Response(OrderedDict([
             ('data', data)
         ]))
@@ -64,15 +64,15 @@ class DataTablesListMixin(object):
 
         if page is not None:
             serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            return self.get_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
-        response = Response(serializer.data)
+
+        response = self.get_response(serializer.data)
 
         return response
 
     def dispatch(self, request, *args, **kwargs):
-
         self.dt_dict = self.assemble_dt_dict(request)
 
         response = super(DataTablesListMixin, self).dispatch(request, args, kwargs)
